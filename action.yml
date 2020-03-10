@@ -1,0 +1,25 @@
+name: 'github-new-deployment'
+description: 'Create a new GitHub deployment'
+branding:
+  icon: 'cloud-lightning'
+  color: 'gray-dark'
+inputs:
+  deploy-env:
+    description: 'Environment of the deployment'
+    required: false
+    default: 'production'
+  deploy-ref:
+    description: 'Reference to deploy'
+    required: false
+    default: 'master'
+  deploy-message:
+    description: 'Message to add to the deployment'
+    required: false
+    default: 'New Deployment from Workflow'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.deploy-env }}
+    - ${{ inputs.deploy-ref }}
+    - ${{ inputs.deploy-message }}
