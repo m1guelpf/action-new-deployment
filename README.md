@@ -5,8 +5,10 @@ Deployment is set to `pending` by default. You should modify this yourself using
 
 ## Example usage
 
+```yaml
 uses: actions/github-new-deployment
 with:
   deploy-env: 'production'
   deploy-ref: 'master'
   deploy-message: 'Custom Message'
+```
